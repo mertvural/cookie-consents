@@ -1,6 +1,7 @@
 # cookie consent vue+vite
 
-Cookie'lere izin verme veya silme işlemi yapar. Tasarım değiştirebilme ve ilgili cookie leri eklemek için config dosyaları vardır.
+Allows or deletes cookies. There are config files to change the design and add the relevant cookies.
+A lightweight JavaScript plugin to handle cookie consent.
 
 ## Recommended IDE Setup
 
