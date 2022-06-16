@@ -28,3 +28,4 @@ npm run dev
 ```sh
 npm run build
 ```
+![cookie-ayarlari](https://user-images.githubusercontent.com/10594349/174081719-0a36e6ed-5e30-45d2-a98f-a0a4443c74ec.png)
