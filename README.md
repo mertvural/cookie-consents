@@ -1,6 +1,6 @@
 # cookie consent vue+vite
 
-This template should help get you started developing with Vue 3 in Vite.
+Cookie'lere izin verme veya silme işlemi yapar. Tasarım değiştirebilme ve ilgili cookie leri eklemek için config dosyaları vardır.
 
 ## Recommended IDE Setup
 
