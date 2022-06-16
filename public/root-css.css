@@ -1,6 +1,8 @@
 :root {
   --font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
   --modal-font-size : 16px;
+  --consent-modal-bg : #fff;
+  --settings-modal-bg : #fff;
   --consent-modal-font-size : 14px;
   --consent-modal-width : 420px;
   --text-color: #2d4156;
@@ -13,6 +15,7 @@
   --overlay-bg: rgba(4, 6, 8, 0.85);
   --cookie-category-block: #f0f4f7;
   --cookie-category-block-bg-hover: #e9eff4;
+  --cookie-category-block-text : #2d4156;
   --switch-bg: #919ea6;
   --switch-bg-active: #2d4156;
   --bg-disable: #d4dee2;

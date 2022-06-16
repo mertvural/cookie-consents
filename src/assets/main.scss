@@ -1,12 +1,8 @@
-* {
-    font-family: var(--font-family);
-    box-sizing: border-box;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
+.cookieConsentWrapper {
+    * {
+        font-family: var(--font-family);
+        box-sizing: border-box;
+    }
 }
 
 .modal-wrapper {
@@ -24,7 +20,7 @@ html {
 .settings_modal {
     color: var(--text-color);
     max-width: 720px;
-    background-color: #fff;
+    background-color: var(--settings-modal-bg);
     border-radius: 5px;
     margin: auto;
     position: relative;
@@ -38,19 +34,25 @@ html {
         border-bottom: 1px solid #f1f3f5;
         font-size: 1.5em;
         font-weight: 600;
-        padding: 20px 30px;
+        padding: 3% 4%;
     }
 
     &__main {
         font-size: .9em;
-        padding: 20px 30px;
+        padding: 3% 4%;
         max-height: calc(100vh - 207px);
         overflow-y: auto;
+        min-width: 100%;
     }
 
     &__footer {
         border-top: 1px solid #f1f3f5;
-        padding: 20px 30px;
+        padding: 3% 4%;        
+    }
+    &__footer-buttons {
+        display: flex;
+        flex-flow: row wrap;
+        gap:12px;
     }
 }
 
@@ -83,7 +85,7 @@ html {
     position: fixed;
     right: 10px;
     bottom: 10px;
-    background-color: #fff;
+    background-color: var(--consent-modal-bg);
     box-shadow: 0 0.625em 1.875em rgb(2 2 3 / 28%);
     padding: 20px;
     width: var(--consent-modal-width);
@@ -110,6 +112,7 @@ html {
         align-items: center;
         justify-content: space-between;
         margin-top: 1.4em;
+        gap:12px;
     }
 
     &__btn-link {
@@ -146,10 +149,6 @@ html {
     font-weight: 600;
     transition: all 0.3s ease;
 
-    +.btn {
-        margin-left: 1em;
-    }
-
     &--secondary {
         background-color: var(--bg-secondary);
         color: var(--text-secondary-color);
@@ -181,6 +180,7 @@ html {
     li {
         background-color: var(--cookie-category-block);
         list-style: none;
+        overflow: hidden;
         border-radius: 5px;
 
         +li {
@@ -194,6 +194,7 @@ html {
         p {
             margin: 0;
             padding: 0 0 15px 0;
+            color:var(--cookie-category-block-text);
         }
     }
 
@@ -202,10 +203,10 @@ html {
     }
 
     &__title-btn {
-        padding: 18px 18px 18px 40px;
+        padding: 18px 85px 18px 40px;
         cursor: pointer;
         font-weight: 600;
-        color: var(--text-color);
+        color: var(--cookie-category-block-text);
         font-size: 1.04em;
         transition: background .3s ease;
         display: block;
@@ -217,8 +218,8 @@ html {
         }
 
         &::before {
-            border: solid #2d4156;
-            border-color: var(--text-color);
+        
+            border:1px solid var(--cookie-category-block-text);
             border-width: 0 2px 2px 0;
             padding: 0.2em;
             display: inline-block;
@@ -328,7 +329,7 @@ html {
 
 .cookie {
     position: relative;
-    border-bottom: 1px dashed var(--text-color);
+    border-bottom: 1px dashed var(--cookie-category-block-text);
 
     +.cookie {
         margin-top: 20px;
@@ -407,8 +408,8 @@ input:disabled:hover {
 
 .settings_modal__close {
     padding: 0;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     font-size: 1.45em;
     margin: 0;
     font-weight: initial;
@@ -435,7 +436,7 @@ input:disabled:hover {
         margin: auto;
         height: 0.6em;
         width: 1.5px;
-        background: var(--text-color);
+        background: var(--cookie-category-block-text);
         transform: rotate(45deg);
         border-radius: 1em;
     }
