@@ -194,7 +194,7 @@
 
         p {
             margin: 0;
-            padding: 0 0 15px 0;
+            padding: 0;
             color:var(--cookie-category-block-text);
         }
     }
@@ -331,10 +331,7 @@
 .cookie {
     position: relative;
     border-bottom: 1px dashed var(--cookie-category-block-text);
-
-    +.cookie {
-        margin-top: 20px;
-    }
+    margin-top: 20px;
 
     &__name {
         position: relative;
@@ -450,6 +447,7 @@ input:disabled:hover {
 @media screen and (max-width:768px) {
     
     .settings_modal {
+        border-radius:0;
         &__footer-buttons {
             display: flex;
             flex-flow: row wrap;
