@@ -50,9 +50,10 @@
         padding: 3% 4%;        
     }
     &__footer-buttons {
-        display: flex;
-        flex-flow: row wrap;
-        gap:12px;
+        margin:0 -.5vw;
+        .btn {
+            margin:0 .5vw
+        }
     }
 }
 
@@ -150,20 +151,20 @@
     transition: all 0.3s ease;
 
     &--secondary {
-        background-color: var(--bg-secondary);
-        color: var(--text-secondary-color);
+        background-color: var(--btn-bg-secondary);
+        color: var(--btn-text-secondary-color);
 
         &:hover {
-            background-color: var(--bg-secondary-hover);
+            background-color: var(--btn-bg-secondary-hover);
         }
     }
 
     &--primary {
-        background-color: var(--bg-primary);
-        color: var(--text-primary-color);
+        background-color: var(--btn-bg-primary);
+        color: var(--btn-text-primary-color);
 
         &:hover {
-            background-color: var(--bg-primary-hover);
+            background-color: var(--btn-bg-primary-hover);
         }
     }
 
@@ -415,14 +416,14 @@ input:disabled:hover {
     font-weight: initial;
     position: relative;
     border: 0;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-close);
     cursor: pointer;
     float: right;
     border-radius: 4px;
     transition: background .3s ease;
 
     &:hover {
-        background-color: var(--bg-primary-hover);
+        background-color: var(--bg-close-hover);
     }
 
     &::before,
@@ -444,4 +445,19 @@ input:disabled:hover {
     &::after {
         transform: rotate(-45deg);
     }
+}
+
+@media screen and (max-width:768px) {
+    
+    .settings_modal {
+        &__footer-buttons {
+            display: flex;
+            flex-flow: row wrap;
+            gap:10px;
+            .btn {
+                margin:0
+            }
+        }
+    }
+
 }

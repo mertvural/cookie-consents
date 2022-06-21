@@ -6,17 +6,19 @@
   --consent-modal-font-size : 14px;
   --consent-modal-width : 420px;
   --text-color: #2d4156;
-  --bg-secondary: #2d4156;
-  --bg-primary: #eaeff2;
-  --bg-primary-hover: #d8e0e6;
-  --bg-secondary-hover: #1d2e38;
-  --text-primary-color: #2d4156;
-  --text-secondary-color: #fff;
-  --overlay-bg: rgba(4, 6, 8, 0.85);
+  --btn-bg-secondary: #a71d8e;
+  --btn-bg-secondary-hover: #bb249f;
+  --btn-bg-primary: #333232;
+  --btn-bg-primary-hover: #000;
+  --btn-text-primary-color: #fff;
+  --btn-text-secondary-color: #fff;
+  --overlay-bg: rgba(4, 6, 8, 0.8);
   --cookie-category-block: #f0f4f7;
   --cookie-category-block-bg-hover: #e9eff4;
   --cookie-category-block-text : #2d4156;
-  --switch-bg: #919ea6;
-  --switch-bg-active: #2d4156;
+  --switch-bg: #333232;
+  --switch-bg-active: #a71d8e;
   --bg-disable: #d4dee2;
+  --bg-close : #f0f4f7;
+  --bg-close-hover : #ddd;
 }
