@@ -4,14 +4,14 @@
   --consent-modal-bg : #fff;
   --settings-modal-bg : #fff;
   --consent-modal-font-size : 14px;
-  --consent-modal-width : 420px;
+  --consent-modal-width : 400px;
   --text-color: #2d4156;
   --btn-bg-secondary: #a71d8e;
   --btn-bg-secondary-hover: #bb249f;
-  --btn-bg-primary: #333232;
-  --btn-bg-primary-hover: #4d4b4b;
-  --btn-text-primary-color: #fff;
   --btn-text-secondary-color: #fff;
+  --btn-bg-primary: #333232;
+  --btn-bg-primary-hover: #333232;
+  --btn-text-primary-color: #fff;
   --overlay-bg: rgba(4, 6, 8, 0.8);
   --cookie-category-block: #f0f4f7;
   --cookie-category-block-bg-hover: #e9eff4;

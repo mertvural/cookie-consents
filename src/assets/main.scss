@@ -34,20 +34,20 @@
         border-bottom: 1px solid #f1f3f5;
         font-size: 1.5em;
         font-weight: 600;
-        padding: 3% 4%;
+        padding: 20px 30px;
     }
 
     &__main {
         font-size: .9em;
-        padding: 3% 4%;
-        max-height: calc(100vh - 207px);
+        padding: 20px 30px;
+        max-height: calc(100vh - 255px);
         overflow-y: auto;
         min-width: 100%;
     }
 
     &__footer {
         border-top: 1px solid #f1f3f5;
-        padding: 2% 4%;        
+        padding: 10px 30px;       
     }
     &__footer-buttons {
         margin:0 -.5vw;
@@ -111,9 +111,10 @@
     &__buttons {
         display: flex;
         align-items: center;
+        flex-flow: row wrap;
         justify-content: space-between;
         margin-top: 1.4em;
-        gap:12px;
+        gap:10px;
     }
 
     &__btn-link {
@@ -149,6 +150,8 @@
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    border:1px solid transparent;
+    min-width: 160px;
 
     &--secondary {
         background-color: var(--btn-bg-secondary);
@@ -160,16 +163,19 @@
     }
 
     &--primary {
-        background-color: var(--btn-bg-primary);
-        color: var(--btn-text-primary-color);
+        background: transparent;
+        border-color: var(--btn-bg-primary);
+        color:var(--btn-bg-primary);
 
         &:hover {
             background-color: var(--btn-bg-primary-hover);
+            color:#fff;
         }
     }
 
     &--last {
         float: right;
+        background-color: var(--btn-bg-primary);
     }
 }
 
@@ -450,8 +456,8 @@ input:disabled:hover {
         border-radius:0;
         &__footer-buttons {
             display: flex;
-            flex-flow: row wrap;
-            gap:10px;
+            flex-direction: column;
+            gap:5px;
             .btn {
                 margin:0
             }
