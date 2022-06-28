@@ -141,7 +141,7 @@ export default {
       cmdset: null,
       cmdsetBlock: null,
       toggleBlock: false,
-      cookieName: "cookieConsent",
+      cookieName: null,
       cookieState: {
         acceptAll: 1,
         rejectAll: 2,

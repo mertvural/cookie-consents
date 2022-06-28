@@ -1,7 +1,7 @@
 var CookieConsent = function () {
     let self = this;
     self.data = {
-        cookie_project_name: 'dgt_cookie',
+        cookie_project_name: 'beinconnect_cookie_consent',
         current_lang: 'tr',
         languages: {
             'tr': {
