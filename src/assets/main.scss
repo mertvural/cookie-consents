@@ -18,7 +18,7 @@
 }
 
 .settings_modal {
-    color: var(--text-color);
+    color: var(--text-title-description-color);
     max-width: 720px;
     background-color: var(--settings-modal-bg);
     border-radius: 5px;
@@ -99,13 +99,13 @@
     h2 {
         margin: 0;
         padding: 0;
-        color: var(--text-color);
+        color: var(--text-title-description-color);
     }
 
     p {
         margin: 0;
         padding-top: 5px;
-        color: var(--text-color);
+        color: var(--text-title-description-color);
     }
 
     &__buttons {
@@ -124,9 +124,9 @@
         border-left: 0;
         border-right: 0;
         padding: 0;
-        color: var(--text-color);
+        color: var(--text-title-description-color);
         border-bottom: 1px solid #253b48;
-        border-color: var(--text-color);
+        border-color: var(--text-title-description-color);
         display: block;
         padding-bottom: 0;
         text-decoration: none;
@@ -164,8 +164,8 @@
 
     &--primary {
         background: transparent;
-        border-color: var(--btn-bg-primary);
-        color:var(--btn-bg-primary);
+        border-color: var(--btn-text-primary-color);
+        color:var(--btn-text-primary-color);
 
         &:hover {
             background-color: var(--btn-bg-primary-hover);

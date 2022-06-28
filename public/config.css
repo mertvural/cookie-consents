@@ -5,13 +5,13 @@
   --settings-modal-bg : #fff;
   --consent-modal-font-size : 14px;
   --consent-modal-width : 400px;
-  --text-color: #2d4156;
+  --text-title-description-color: #2d4156;
   --btn-bg-secondary: #a71d8e;
   --btn-bg-secondary-hover: #bb249f;
   --btn-text-secondary-color: #fff;
   --btn-bg-primary: #333232;
   --btn-bg-primary-hover: #333232;
-  --btn-text-primary-color: #fff;
+  --btn-text-primary-color: #333232;
   --overlay-bg: rgba(4, 6, 8, 0.8);
   --cookie-category-block: #f0f4f7;
   --cookie-category-block-bg-hover: #e9eff4;
