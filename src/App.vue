@@ -1,24 +1,17 @@
 <template>
   <div class="cookieConsentWrapper">
-    <div
-      class="consent_modal"
-      v-show="visibleConsentModal && !visibleModal"
-    >
+    <div class="consent_modal" v-show="visibleConsentModal && !visibleModal">
       <h2>
         {{ cmd.title }}
       </h2>
       <p>
-        {{ cmd.description }}        
+        {{ cmd.description }}
       </p>
       <div class="consent_modal__buttons">
         <button type="button" class="btn btn--secondary" @click="acceptAll()">
           HEPSİNİ KABUL ET
         </button>
-        <button
-          type="button"
-          class="btn btn--primary"
-          @click="openedModal()"
-        >
+        <button type="button" class="btn btn--primary" @click="openedModal()">
           AYARLAR
         </button>
       </div>
@@ -60,7 +53,7 @@
                       @change="catAllChecked(item.value, item.enabled)"
                       :checked="item.cookies.some((x) => x.enabled === true)"
                       :disabled="item.readonly"
-                    />                    
+                    />
                   </div>
                 </div>
 
@@ -90,7 +83,7 @@
                         :value="item.name"
                         :disabled="item.readonly"
                         v-model="item.enabled"
-                      />                      
+                      />
                     </div>
                   </div>
                 </div>
@@ -131,8 +124,9 @@
 
 <script>
 import Cookies from "js-cookie";
-
+import CookieConsent from "../src/assets/config";
 export default {
+  props: ["datas"],
   data() {
     return {
       visibleConsentModal: false,
@@ -151,11 +145,19 @@ export default {
     };
   },
   created() {
-    const datas = new CookieConsent();
-    this.cmd = datas.data.languages.tr.consent_modal;
-    this.cmdset = datas.data.languages.tr.settings_modal;
-    this.cookieName = datas.data.cookie_project_name;
-    this.cmdsetBlock = datas.data.languages.tr.settings_modal.blocks;
+    if (!this.datas) {
+      const datas = new CookieConsent();
+      this.cmd = datas.data.languages.tr.consent_modal;
+      this.cmdset = datas.data.languages.tr.settings_modal;
+      this.cookieName = datas.data.cookie_project_name;
+      this.cmdsetBlock = datas.data.languages.tr.settings_modal.blocks;
+    } else {
+      this.cmd = this.datas.languages.tr.consent_modal;
+      this.cmdset = this.datas.languages.tr.settings_modal;
+      this.cookieName = this.datas.cookie_project_name;
+      this.cmdsetBlock = this.datas.languages.tr.settings_modal.blocks;
+    }
+
     !localStorage.getItem(this.cookieName)
       ? (this.visibleConsentModal = true)
       : this.cookieStateChange(this.cookieState.setAgain);
@@ -164,7 +166,7 @@ export default {
   methods: {
     /*
      * @param {Number} index - index of the number
-    */
+     */
     openedWrapper(ths) {
       if (this.toggleBlock === ths) {
         this.toggleBlock = false;
@@ -175,7 +177,7 @@ export default {
 
     /*
      * @param {String, Boolean} val = category cookie, enabled = active passive checkbox
-    */
+     */
     catAllChecked(val, enabled) {
       let [filterVal] = this.cmdsetBlock.filter((x) => x.value === val);
       enabled
@@ -204,10 +206,10 @@ export default {
       this.storageAdd(this.cmdsetBlock);
       this.cookieStateChange(this.cookieState.saveSettings);
     },
-    
+
     /*
-     * @param {String} cmdset = selected situations 
-    */
+     * @param {String} cmdset = selected situations
+     */
     storageAdd(cmdset) {
       localStorage.setItem(this.cookieName, JSON.stringify(cmdset));
       this.visibleConsentModal = false;
@@ -216,7 +218,7 @@ export default {
 
     /*
      * @param {Number} state = events that will happen
-    */
+     */
     cookieStateChange(state) {
       switch (state) {
         case 1:
@@ -269,6 +271,10 @@ export default {
   },
 };
 </script>
+
+<style>
+@import "./assets/config.css";
+</style>
 
 <style lang="scss" scoped>
 @import "./assets/main.scss";

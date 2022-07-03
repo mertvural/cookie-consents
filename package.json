@@ -1,11 +1,26 @@
 {
-  "name": "test",
-  "version": "0.0.0",
+  "name": "cookie-consent-mv",
+  "version": "1.0.56",
+  "description": "A lightweight JavaScript plugin to handle cookie consent.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
+  "files": ["dist"],
+  "main": "./dist/cookieConsent_mv.umd.js",
+  "module": "./dist/cookieConsent_mv.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/cookieConsent_mv.es.js",
+      "require": "./dist/cookieConsent_mv.umd.js"
+    }
+  },
+  "author": {
+    "name": "Mert Vural",
+    "email": "mertvural90@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "js-cookie": "^3.0.1",
     "vue": "^3.2.36"
