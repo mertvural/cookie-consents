@@ -79,21 +79,21 @@
                 class="btn btn--secondary"
                 @click="acceptAll()"
               >
-                Hepsini kabul et
+                {{cmdset.accept_all_btn}}
               </button>
               <button
                 type="button"
                 class="btn btn--primary"
                 @click="rejectAll()"
               >
-                Hepsini reddet
+                {{cmdset.reject_all_btn}}
               </button>
               <button
                 type="button"
                 class="btn btn--secondary btn--last"
                 @click="saveSettings()"
               >
-                Ayarları kaydet
+               {{cmdset.save_settings_btn}}
               </button>
             </div>
           </footer>

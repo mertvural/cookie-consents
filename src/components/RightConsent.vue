@@ -8,10 +8,10 @@
       </p>
       <div class="consent_modal__buttons">
         <button type="button" class="btn btn--secondary" @click="acceptAll()">
-          HEPSİNİ KABUL ET
+          {{cmd.primary_btn.text}}
         </button>
         <button type="button" class="btn btn--primary" @click="openedModal()">
-          AYARLAR
+           {{cmd.secondary_btn.text}}
         </button>
       </div>
     </div>

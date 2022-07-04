@@ -6,76 +6,76 @@ export default function CookieConsent() {
         languages: {
             'tr': {
                 consent_modal: {
-                    title: 'Çerez kullanıyoruz!',
-                    description: 'Merhaba, bu web sitesi düzgün çalışmasını sağlamak için gerekli çerezleri ve onunla nasıl etkileşim kurduğunuzu anlamak için çerezleri takip eder. İkincisi ancak onay alındıktan sonra belirlenir.',
+                    title: 'We use cookies!',
+                    description: 'Hello, this website tracks cookies to understand the cookies necessary to make it work properly and how you interact with it. The latter is determined only after approval.',
                     primary_btn: {
-                        text: 'Hepsini kabul et'
+                        text: 'ACCEPT ALL'
                     },
                     secondary_btn: {
-                        text: 'Hepsini reddet'
+                        text: 'SETTINGS'
                     }
                 },
                 settings_modal: {
-                    title: "Çerezler",
-                    description: "Web sitesinin temel işlevlerini sağlamak ve çevrimiçi deneyiminizi geliştirmek için tanımlama bilgileri kullanıyorum. Her kategori için istediğiniz zaman katılmayı/çıkma yapmayı seçebilirsiniz. Çerezler ve diğer hassas verilerle ilgili daha fazla ayrıntı için lütfen tam gizlilik politikasını okuyun.",
-                    save_settings_btn: 'Ayarları kaydet',
-                    accept_all_btn: 'Hepsini kabul et',
-                    reject_all_btn: 'Hepsini reddet',
+                    title: "Cookies",
+                    description: "I use cookies to provide basic functionality of the website and improve your online experience. You can choose to join/exit at any time for each category. For more details regarding cookies and other sensitive data, please read the full privacy policy.",
+                    save_settings_btn: 'Save Settings',
+                    accept_all_btn: 'Accept All',
+                    reject_all_btn: 'Reject All',
                     blocks: [
                         {
-                            title: "Kesinlikle gerekli çerezler",
-                            description: "Bu çerezler web sitemin düzgün çalışması için gereklidir. Bu çerezler olmadan web sitesi düzgün çalışmayacaktır.",
+                            title: "Strictly necessary cookies",
+                            description: "These cookies are necessary for my website to work properly. Without these cookies the website will not function properly.",
                             value: 'necessary',
                             enabled: true,
                             readonly: true,
                             cookies: [
                                 {
-                                    name: "cerez1",
+                                    name: "cookie1",
                                     enabled: true,
                                     readonly: true,
                                 },
                                 {
-                                    name: "cerez2",
+                                    name: "cookie2",
                                     enabled: true,
                                     readonly: true,
                                 }
                             ]
                         },
                         {
-                            title: "Performans ve Analiz çerezleri",
-                            description: "Bu çerezler, web sitesinin geçmişte yaptığınız seçimleri hatırlamasını sağlar.",
+                            title: "Performance and Analytics cookies",
+                            description: "These cookies allow the website to remember choices you have made in the past.",
                             value: 'performance',
                             enabled: false,
                             readonly: false,
                             cookies: [
                                 {
-                                    name: "cerez3",
+                                    name: "cookie3",
                                     enabled: false,
                                     readonly: false,
                                 },
                                 {
-                                    name: "cerez4",
+                                    name: "cookie4",
                                     enabled: false,
                                     readonly: false,
                                 }
                             ]
                         },
                         {
-                            title: "Reklam ve Hedefleme çerezleri",
+                            title: "Advertising and Targeting cookies",
                             description: `
-                            Bu tanımlama bilgileri, web sitesini nasıl kullandığınız, hangi sayfaları ziyaret ettiğiniz ve hangi bağlantılara tıkladığınız hakkında bilgi toplar. Tüm veriler anonimdir ve sizi tanımlamak için kullanılamaz
+                            These cookies collect information about how you use the website, which pages you visit and which links you click. All data is anonymous and cannot be used to identify you
                             `,
                             value: 'targeting',
                             enabled: false,
                             readonly: false,
                             cookies: [
                                 {
-                                    name: "cerez5",
+                                    name: "cookie5",
                                     enabled: false,
                                     readonly: false
                                 },
                                 {
-                                    name: "cerez6",
+                                    name: "cookie6",
                                     enabled: false,
                                     readonly: false
                                 }
