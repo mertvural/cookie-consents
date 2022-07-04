@@ -175,4 +175,7 @@ Note : this is a required css. cannot be changed
 
 Note : You can make edits in this css
 ```
+![1](https://user-images.githubusercontent.com/10594349/177137779-91e0da0e-4391-435a-986e-e8caa9a69117.png)
+![3](https://user-images.githubusercontent.com/10594349/177137786-b984fd25-c331-4eac-99eb-824eb391ef2a.png)
+![2](https://user-images.githubusercontent.com/10594349/177137789-dd7fc0f3-9e6e-473a-a469-451dcefde952.png)
 
