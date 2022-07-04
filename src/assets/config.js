@@ -1,7 +1,7 @@
 export default function CookieConsent() {
     let self = this;
     self.data = {
-        cookie_project_name: 'beinconnect_cookie_consent',
+        cookie_project_name: 'cookie_consent',
         current_lang: 'tr',
         languages: {
             'tr': {
