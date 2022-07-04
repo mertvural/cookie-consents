@@ -47,7 +47,7 @@ You can change the fields you see. is the config file
 An example setup for datas props;
 ```sh
 datas: {
-        cookie_project_name: "beinconnect_cookie_consent",
+        cookie_project_name: "cookie_consent",
         current_lang: "tr",
         languages: {
           tr: {
