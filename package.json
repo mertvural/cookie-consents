@@ -24,6 +24,7 @@
     "type": "github",
     "url": "https://github.com/mertvural/cookie-consents"
   },
+  "homepage": "https://github.com/mertvural/cookie-consents",
   "license": "MIT",
   "dependencies": {
     "js-cookie": "^3.0.1",
