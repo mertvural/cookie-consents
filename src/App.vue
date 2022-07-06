@@ -117,8 +117,7 @@ export default {
      */
     storageAdd(cmdset) {
       localStorage.setItem(this.cookieName, JSON.stringify(cmdset));
-      this.visibleConsentModal = false;
-      this.visibleModal = false;
+      this.closeModal();
     },
 
     /*
