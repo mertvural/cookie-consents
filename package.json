@@ -1,6 +1,6 @@
 {
   "name": "cookie-consent-mv",
-  "version": "1.0.56",
+  "version": "0.0.5",
   "description": "A lightweight JavaScript plugin to handle cookie consent.",
   "scripts": {
     "dev": "vite",
@@ -20,6 +20,11 @@
     "name": "Mert Vural",
     "email": "mertvural90@gmail.com"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/mertvural/cookie-consents"
+  },
+  "homepage": "https://github.com/mertvural/cookie-consents",
   "license": "MIT",
   "dependencies": {
     "js-cookie": "^3.0.1",
