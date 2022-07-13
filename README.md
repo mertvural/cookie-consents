@@ -1,5 +1,7 @@
 # cookie consent vue+vite
 
+Cookie Consent for Vue JS
+
 Allows or deletes cookies. There are config files to change the design and add the relevant cookies.
 A lightweight JavaScript plugin to handle cookie consent.
 
