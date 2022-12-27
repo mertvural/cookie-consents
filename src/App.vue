@@ -1,29 +1,16 @@
 <template>
   <div class="cookieConsentWrapper">
-    <RightConsent
-      :visibleConsentModal="visibleConsentModal"
-      :visibleModal="visibleModal"
-      :cmd="cmd"
-      :openedModal="openedModal"
-      :acceptAll="acceptAll"
-    />
-    <OptionModal
-      :visibleModal="visibleModal"
-      :cmdset="cmdset"
-      :closeModal="closeModal"
-      :toggleBlock="toggleBlock"
-      :saveSettings="saveSettings"
-      :rejectAll="rejectAll"
-      :acceptAll="acceptAll"
-      :openedWrapper="openedWrapper"
-      :catAllChecked="catAllChecked"
-    />
+    <RightConsent :visibleConsentModal="visibleConsentModal" :visibleModal="visibleModal" :cmd="cmd"
+      :openedModal="openedModal" :acceptAll="acceptAll" />
+    <OptionModal :catItemChecked="catItemChecked" :cmdsetBlock="cmdsetBlock" :visibleModal="visibleModal"
+      :cmdset="cmdset" :closeModal="closeModal" :toggleBlock="toggleBlock" :saveSettings="saveSettings"
+      :rejectAll="rejectAll" :acceptAll="acceptAll" :openedWrapper="openedWrapper" :catAllChecked="catAllChecked" />
   </div>
 </template>
 
 <script>
 import Cookies from "js-cookie";
-import CookieConsent from "../src/assets/config";
+import CookieConsent from "./assets/config"
 import RightConsent from "./components/RightConsent.vue";
 import OptionModal from "./components/OptionModal.vue";
 export default {
@@ -41,6 +28,7 @@ export default {
       cmdsetBlock: null,
       toggleBlock: false,
       cookieName: null,
+      getLocalStorageDatas: [],
       cookieState: {
         acceptAll: 1,
         rejectAll: 2,
@@ -50,24 +38,34 @@ export default {
     };
   },
   created() {
-    if (!this.datas) {
+
+    var self = this;
+
+    //if props are present or not
+    if (!self.datas) {
       const datas = new CookieConsent();
-      this.cmd = datas.data.languages.tr.consent_modal;
-      this.cmdset = datas.data.languages.tr.settings_modal;
-      this.cookieName = datas.data.cookie_project_name;
-      this.cmdsetBlock = datas.data.languages.tr.settings_modal.blocks;
+      self.cmd = datas.data.languages.tr.consent_modal;
+      self.cmdset = datas.data.languages.tr.settings_modal;
+      self.cookieName = datas.data.cookie_project_name;
+      self.getLocalStorageDatas = JSON.parse(localStorage.getItem(self.cookieName))
+      self.getLocalStorageDatas ? self.cmdsetBlock = self.getLocalStorageDatas : self.cmdsetBlock = datas.data.languages.tr.settings_modal.blocks;
     } else {
-      this.cmd = this.datas.languages.tr.consent_modal;
-      this.cmdset = this.datas.languages.tr.settings_modal;
-      this.cookieName = this.datas.cookie_project_name;
-      this.cmdsetBlock = this.datas.languages.tr.settings_modal.blocks;
+      self.cmd = self.datas.languages.tr.consent_modal;
+      self.cmdset = self.datas.languages.tr.settings_modal;
+      self.cookieName = self.datas.cookie_project_name;
+      self.cmdsetBlock = self.datas.languages.tr.settings_modal.blocks;
     }
 
-    !localStorage.getItem(this.cookieName)
-      ? (this.visibleConsentModal = true)
-      : this.cookieStateChange(this.cookieState.setAgain);
-  },
+    //If there is no localstorage, show popup, if there is, read its values
+    !self.getLocalStorageDatas ? this.visibleConsentModal = true : this.cookieStateChange(this.cookieState.setAgain);
 
+  },
+  mounted() {
+    let self = this;
+    const openedCookieBttn = document.querySelector(".openedCookieBttn");
+    if (!openedCookieBttn) return
+    openedCookieBttn.addEventListener("click", () => self.openedModal());
+  },
   methods: {
     /*
      * @param {Number} index - index of the number
@@ -79,7 +77,6 @@ export default {
       }
       this.toggleBlock = ths;
     },
-
     /*
      * @param {String, Boolean} val = category cookie, enabled = active passive checkbox
      */
@@ -89,29 +86,43 @@ export default {
         ? filterVal.cookies.map((x) => (x.enabled = true))
         : filterVal.cookies.map((x) => (x.enabled = false));
     },
-
+    /*
+     * @param {String} val = item cookie
+     */
+    catItemChecked(val) {
+      let [filterVal] = this.cmdsetBlock.filter((x) => x.value === val);
+      filterVal.enabled = filterVal.cookies.some(x => x.enabled === true)
+    },
+    /*
+     * makes it all approved
+     */
     acceptAll() {
       this.cmdsetBlock.forEach((element) => {
         if (element.readonly) return;
+        element.enabled = true;
         element.cookies.map((x) => (x.enabled = true));
       });
       this.storageAdd(this.cmdsetBlock);
     },
-
+    /*
+     * makes them all unapproved
+     */
     rejectAll() {
       this.cmdsetBlock.forEach((element) => {
         if (element.readonly) return;
+        element.enabled = false;
         element.cookies.map((x) => (x.enabled = false));
       });
       this.storageAdd(this.cmdsetBlock);
       this.cookieStateChange(this.cookieState.rejectAll);
     },
-
+    /*
+     * saves selections
+     */
     saveSettings() {
       this.storageAdd(this.cmdsetBlock);
       this.cookieStateChange(this.cookieState.saveSettings);
     },
-
     /*
      * @param {String} cmdset = selected situations
      */
@@ -119,7 +130,6 @@ export default {
       localStorage.setItem(this.cookieName, JSON.stringify(cmdset));
       this.closeModal();
     },
-
     /*
      * @param {Number} state = events that will happen
      */
@@ -163,11 +173,15 @@ export default {
           break;
       }
     },
-
+    /*
+     * opens modal
+     */
     openedModal() {
       this.visibleModal = true;
     },
-
+    /*
+     * closes the modal
+     */
     closeModal() {
       this.visibleModal = false;
       this.visibleConsentModal = false;
