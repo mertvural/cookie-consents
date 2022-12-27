@@ -62,9 +62,11 @@ export default {
   },
   mounted() {
     let self = this;
-    const openedCookieBttn = document.querySelector(".openedCookieBttn");
-    if (!openedCookieBttn) return
-    openedCookieBttn.addEventListener("click", () => self.openedModal());
+    window.addEventListener("load", function (event) {
+      const openedCookieBttn = document.querySelector(".openedCookieBttn");
+      if (!openedCookieBttn) return
+      openedCookieBttn.addEventListener("click", () => self.openedModal());
+    });
   },
   methods: {
     /*
