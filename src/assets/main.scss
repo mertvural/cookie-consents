@@ -201,7 +201,7 @@
     &__wrapper {
         padding: 15px 17px 25px 17px;
 
-        p {
+        &__desc {
             margin: 0;
             padding: 0;
             color: var(--cookie-category-block-text);
@@ -258,6 +258,7 @@
     bottom: 0;
     margin: auto;
     cursor: pointer;
+    z-index: 10;
 
     input[type="checkbox"] {
         margin: 0;
@@ -338,9 +339,11 @@
 }
 
 .cookie {
-    position: relative;
-    border-bottom: 1px dashed var(--cookie-category-block-text);
-    margin-top: 20px;
+    margin-top: 5px;
+    &__wrapper {
+        border-bottom: 1px dashed var(--cookie-category-block-text);
+        position: relative;       
+    }
 
     &__name {
         position: relative;
@@ -353,6 +356,15 @@
         &.active {
             color: var(--switch-bg-active)
         }
+    }
+
+    &__desc {
+        padding: 15px 0 0 0;
+        margin:0;
+        line-height: 1.3;
+        letter-spacing: -.1px;
+        font-size: 12px;
+        opacity: .8;
     }
 }
 

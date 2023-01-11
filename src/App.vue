@@ -10,7 +10,7 @@
 
 <script>
 import Cookies from "js-cookie";
-import CookieConsent from "./assets/config"
+// import {CookieConsent} from "./assets/config"
 import RightConsent from "./components/RightConsent.vue";
 import OptionModal from "./components/OptionModal.vue";
 export default {

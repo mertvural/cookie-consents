@@ -24,18 +24,23 @@
               </div>
 
               <div class="accordion-block__wrapper" v-show="toggleBlock === index">
-                <p>
+                <p class="accordion-block__wrapper__desc">
                   {{ item.description }}
                 </p>
 
                 <div class="cookie" v-for="(item2, index) in item.cookies" :key="index">
-                  <span class="cookie__name" :class="item2.enabled ? 'active' : ''">
+                  <div class="cookie__wrapper">
+                    <span class="cookie__name" :class="item2.enabled ? 'active' : ''">
                     {{ item2.name }}
                   </span>
                   <div class="input_wrapper sm">
                     <input type="checkbox" class="switch" :value="item2.name" :disabled="item2.readonly"
                       v-model="item2.enabled" @change="catItemChecked(item.value)" />
                   </div>
+                  </div>
+                  <p class="cookie__desc">
+                    {{ item2.description }}
+                  </p>
                 </div>
               </div>
             </li>

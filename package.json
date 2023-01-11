@@ -7,7 +7,9 @@
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/cookieConsent_mv.umd.js",
   "module": "./dist/cookieConsent_mv.es.js",
   "exports": {
