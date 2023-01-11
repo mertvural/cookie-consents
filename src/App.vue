@@ -10,7 +10,7 @@
 
 <script>
 import Cookies from "js-cookie";
-// import {CookieConsent} from "./assets/config"
+//import {CookieConsent} from "./assets/config"
 import RightConsent from "./components/RightConsent.vue";
 import OptionModal from "./components/OptionModal.vue";
 export default {
@@ -54,15 +54,14 @@ export default {
       self.cmdset = self.datas.languages.tr.settings_modal;
       self.cookieName = self.datas.cookie_project_name;
       self.cmdsetBlock = self.datas.languages.tr.settings_modal.blocks;
-    }
-
-    //If there is no localstorage, show popup, if there is, read its values
-    !self.getLocalStorageDatas ? this.visibleConsentModal = true : this.cookieStateChange(this.cookieState.setAgain);
+    }    
 
   },
   mounted() {
     let self = this;
     window.addEventListener("load", function (event) {
+      //If there is no localstorage, show popup, if there is, read its values
+      !self.getLocalStorageDatas ? self.visibleConsentModal = true : self.cookieStateChange(self.cookieState.setAgain);
       const openedCookieBttn = document.querySelector(".openedCookieBttn");
       if (!openedCookieBttn) return
       openedCookieBttn.addEventListener("click", () => self.openedModal());
