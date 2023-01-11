@@ -83,7 +83,7 @@
 }
 
 .consent_modal {
-    animation: consent_modal 1s ease forwards 3s;
+    animation: consent_modal 1s ease forwards;
     transform: translateX(100%);
     opacity: 0;
     position: fixed;

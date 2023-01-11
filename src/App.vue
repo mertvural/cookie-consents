@@ -61,7 +61,9 @@ export default {
     let self = this;
     window.addEventListener("load", function (event) {
       //If there is no localstorage, show popup, if there is, read its values
-      !self.getLocalStorageDatas ? self.visibleConsentModal = true : self.cookieStateChange(self.cookieState.setAgain);
+      setTimeout(() => {
+        !self.getLocalStorageDatas ? self.visibleConsentModal = true : self.cookieStateChange(self.cookieState.setAgain);
+      }, 5000);
       const openedCookieBttn = document.querySelector(".openedCookieBttn");
       if (!openedCookieBttn) return
       openedCookieBttn.addEventListener("click", () => self.openedModal());
