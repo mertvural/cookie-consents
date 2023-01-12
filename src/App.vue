@@ -60,7 +60,9 @@ export default {
     if (!self.datas) {
 
       let datas;
-      import.meta.env.MODE === "development" ? datas = new CookieConsent() : datas = new _cookieConsent();        
+      /*development da ise localde ki CookieConsent calistir. production da ise constant olan _cookieConsent calistir */
+      import.meta.env.MODE === "development" ? datas = new CookieConsent() : datas = new _cookieConsent();      
+        
       self.cmd = datas.data.languages.tr.consent_modal;
       self.cmdset = datas.data.languages.tr.settings_modal;
       self.cookieName = datas.data.cookie_project_name;
