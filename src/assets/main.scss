@@ -42,6 +42,13 @@
         max-height: calc(100vh - 255px);
         overflow-y: auto;
         min-width: 100%;
+        &::-webkit-scrollbar {
+            width: 5px;
+            background: var(--scrollbar);
+        }        
+        &::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+        }
     }
 
     &__footer {
