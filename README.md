@@ -11,7 +11,7 @@ A lightweight JavaScript plugin to handle cookie consent.
 
 ## Customize configuration
 
-Seee [Vite Configuration Reference](https://vitejs.dev/config/).
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
